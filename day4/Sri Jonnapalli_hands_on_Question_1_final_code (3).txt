@@ -1,0 +1,1 @@
+import java.util.*; class MyClass{ public static void main(String args[]){ int n; Scanner sc=new Scanner(System.in); n=sc.nextInt(); int s=0; while(n>0){ s+=n%10; n/=10;} if(s%3==0){ System.out.println("TRUE"); } else { System.out.println("FALSE"); } }}
