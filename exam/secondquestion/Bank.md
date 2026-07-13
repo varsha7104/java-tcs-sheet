@@ -5,10 +5,10 @@
 Create a class **BankAccount** with the following attributes:
 
 -   `accId` -- String
--   `accHolderName` -- String
--   `accType` -- String
+-   `accHolderName` -- String 
+-   `accType` -- String in saving or current
 -   `occupation` -- String
--   `kyc` -- KYC
+
 
 Create a class **KYC** with the following attributes:
 
@@ -20,41 +20,32 @@ Create a class **KYC** with the following attributes:
 Provide appropriate constructors, getters and setters for all the
 attributes.
 
-A **BankAccount** has exactly one **KYC** object associated with it
-(Aggregation).
+A **BankAccount** has exactly one **KYC** object . A **KYC** has exactly one *BankAccount** object and 
+**KYC** doesnot exists uniquely and always account should have a bank .
+
 
 ## Method
 
-Create a static method:
+Create a static method:findtbankByKYC()
 
-``` java
-public static BankAccount[] findBankByKYC(BankAccount[] accounts, String accountType)
-```
+This method will take an array of BankAccount objects and a String parameter as input parameters.
 
-### Requirements
+This method will search for all BankAccount objects whose account type matches the given account type (String parameter passed) and whose associated KYC status is "Lapsed". The comparison should be case-insensitive.
 
--   Search for all BankAccount objects whose:
-    -   `accType` matches the given `accountType`.
-    -   Associated KYC `status` is `"Lapsed"`.
--   Both comparisons must be **case-insensitive**.
--   Return an array of all matching BankAccount objects.
--   If no matching object is found, return `null`.
+The method should return an array of BankAccount objects that satisfy the above conditions.
 
-## Solution Class
+If no BankAccount object satisfies the given criteria, then the method should return null.
 
-In the `main()` method:
 
-1.  Declare an array of `BankAccount` objects.
-2.  If the array length is less than or equal to `0`, initialize it with
-    a valid size.
-3.  Create and add a few `BankAccount` objects along with their
-    respective `KYC` objects.
-4.  Read the `accountType` from the user.
-5.  Call:
+All search operations  must be **case-insensitive**.
 
-``` java
-findBankByKYC(accounts, accountType);
-```
+Declare Solution Class with the `main()` method:
+
+  Declare an array of `BankAccount` objects.
+ If the array length is less than or equal to `0`,
+ Print Add few more accounts to the bank
+
+
 
 6.  If the returned array is `null`, print:
 
@@ -67,26 +58,54 @@ Otherwise, print the details of each matching `BankAccount`.
 
 ## Sample Input
 
-    Savings
-
+  3
+A101
+Rahul
+Savings
+Engineer
+PAN12345
+Aadhar
+123456789012
+Lapsed
+A102
+Priya
+Current
+Business
+PAN23456
+Passport
+P9876543
+Active
+A103
+Amit
+Savings
+Teacher
+PAN34567
+VoterID
+V12345678
+Lapsed
+Savings
 ## Sample Output
 
-    A101
-    Rahul
-    Savings
-    Engineer
-
-    A105
-    Priya
-    Savings
-    Teacher
-
+  
+Rahul
+Savings
+Engineer
+Aadhar
+Lapsed
+Amit
+Savings
+Teacher
+VoterID
+Lapsed
 ## If No Matching Account Exists
 
 ### Input
 
-    Current
+   0
 
 ### Output
 
-    KYC Lapsed is not found
+   Add few more accounts to bank account array
+
+## Note:
+Make sure the main method is in java.
