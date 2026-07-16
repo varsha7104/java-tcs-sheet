@@ -30,7 +30,7 @@ Create a static method:findtbankByKYC()
 
 This method will take an array of BankAccount objects and a String parameter as input parameters.
 
-This method will search for all BankAccount objects whose account type matches the given account type (String parameter passed) and whose associated KYC status is "Lapsed". The comparison should be case-insensitive.
+This method will search for all BankAccount objects whose occupation matches the given occupation (String parameter passed) and whose associated KYC status is "Lapsed". The comparison should be case-insensitive.
 
 The method should return an array of BankAccount objects that satisfy the above conditions.
 
